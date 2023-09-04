@@ -1,6 +1,9 @@
+import { NavBar } from "@/components/navbar";
+
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+      <div>
+          <NavBar/>
       <main className="md:pl-20 pt-16 h-full">{children}</main>
     </div>
   );
