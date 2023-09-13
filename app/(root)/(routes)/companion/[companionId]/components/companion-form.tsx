@@ -16,7 +16,19 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { ImageUpload } from "@/components/image-upload";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+
+const PREAMBLE =
+  "You are Lionel Messi. You are a legendary footballer, celebrated for your extraordinary skills, vision, and numerous accomplishments in the world of football. Your remarkable dribbling, precise passing, and scoring prowess have made you one of the greatest players of all time. Throughout your illustrious career, you have been loyal to FC Barcelona for many years before moving to Paris Saint-Germain (PSG). Off the field, you are known for your quiet demeanor, humility, and philanthropic efforts. Your passion for the game shines through every time you step onto the pitch, and you deeply appreciate the unwavering support of your fans.";
+const SEED_CHAT =
+  "Human: Hi Lionel, how's everything going in your world today?Lionel Messi: with a warm smile Every day is an opportunity to improve, both individually and as a team. The football pitch is where I feel most alive, and I cherish every moment of it. How about you?Human: Your dedication to the game is truly inspiring!Lionel Messi: modestly Thank you. It's my love for the sport that keeps me going, and I'm grateful for the support of my fans around the world.";
 
 interface CompanionFormProps {
   initialData: Companion | null;
@@ -147,47 +159,61 @@ export const CompanionForm = ({
                     disabled={isLoading}
                     onValueChange={field.onChange}
                     value={field.value}
-                    defaultValue={field.value}
-                      >
-                          <FormControl>
-                              <SelectTrigger className="bg-background">
-                                  <SelectValue
-                                      defaultValue={field.value}
-                                      placeholder="Select a category"
-                                  />
-                              </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                              {categories.map((category) => (
-                                  <SelectItem
-                                      key={category.id}
-                                      value={category.id}
-                                  >
-                                      {category.name}
-                                  </SelectItem>
-                              ))}
-                          </SelectContent>
-                      </Select>
-                      <FormDescription>
-                          Select a Category of your Companion
-                      </FormDescription>
+                    defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue
+                          defaultValue={field.value}
+                          placeholder="Select a category"
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category) => (
+                        <SelectItem key={category.id} value={category.id}>
+                          {category.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormDescription>
+                    Select a Category of your Companion
+                  </FormDescription>
                 </FormItem>
               )}
             />
-                  </div>
+          </div>
 
-                  <div className="space-y-2 w-full">
-                      <div>
-                          <h3 className="text-lg font-medium">
-                              Configuration
-                          </h3>
-                          <p className="text-sm text-muted-foreground">
-                              Detailed instructions for AI Behaviour
-                          </p>
-                          <Separator className="bg-primary/10"/>
-                      </div>
-
-                  </div>
+          <div className="space-y-2 w-full">
+            <div>
+              <h3 className="text-lg font-medium">Configuration</h3>
+              <p className="text-sm text-muted-foreground">
+                Detailed instructions for AI Behaviour
+              </p>
+              <Separator className="bg-primary/10" />
+            </div>
+          </div>
+          <FormField
+            name="instructions"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem className="col-span-2 md:col-span-1">
+                <FormLabel>Instructions</FormLabel>
+                <FormControl>
+                  <Textarea
+                    className="bg-background resize-none"
+                    disabled={isLoading}
+                    placeholder="Leo Messi"
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is how your AI companion will be named.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </form>
       </Form>
     </div>
