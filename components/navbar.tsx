@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSideBar } from "./mobile-sidebar";
+import Image from "next/image";
 
 const font = Poppins({
   weight: "600",
@@ -20,13 +21,23 @@ export const NavBar = () => {
         <div className="flex items-center">
           <MobileSideBar />
           <Link href="/">
-            <h1
-              className={cn(
-                "hidden md:block text-xl md:text-3xl font-bold text-primary",
-                font.className
-              )}>
-              celebchat.ai
-            </h1>
+            <div className="flex flex-row align-middle justify-center">
+              <Image
+                style={{ alignSelf: "center" }}
+                width={64}
+                height={64}
+                alt="Empty"
+                src={"/logoa.png"}
+              />
+              <h1
+                className={cn(
+                  "hidden md:block text-xl md:text-3xl font-bold text-primary ml-5",
+                  font.className
+                )}
+                style={{ alignSelf: "center" }}>
+                celebchat.ai
+              </h1>
+            </div>
           </Link>
         </div>
         <div className="flex items-center gap-x-3">
@@ -35,8 +46,8 @@ export const NavBar = () => {
             size="sm">
             Upgrade
             <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
-                </Button>
-                <ModeToggle/>
+          </Button>
+          <ModeToggle />
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>
