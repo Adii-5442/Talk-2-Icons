@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSideBar } from "./mobile-sidebar";
 import Image from "next/image";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 const font = Poppins({
   weight: "600",
@@ -16,6 +17,8 @@ const font = Poppins({
 });
 
 export const NavBar = () => {
+
+  const proModal = useProModal()
     return (
       <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 h-16">
         <div className="flex items-center">
@@ -41,7 +44,7 @@ export const NavBar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-x-3">
-          <Button
+          <Button onClick={proModal.onOpen}
             className="variant-premium premium-button-bg text-white border-0"
             size="sm">
             Upgrade
