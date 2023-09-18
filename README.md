@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" style="display: flex; justify-content: center; align-items: center;">
   <img src="/public/logoa.png" alt="Talk 2 Icons Logo" width="200">
 </div>
 
@@ -7,6 +7,10 @@
 Talk2Icons is an innovative project that empowers users to design their very own AI companions based on iconic personalities or characters. Whether you want to chat with your favorite historical figure, a fictional character, or even your own custom creation, Talk2Icons makes it possible.
 
 Explore the realm of personalized artificial intelligence companionship with Talk2Icons!
+
+<div align="center" style="display: flex; justify-content: center; align-items: center;marginTop:50">
+    <img src="/public/home.png" alt="Talk 2 Icons Logo">
+</div>
 
 ## Description
 
