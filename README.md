@@ -1,4 +1,4 @@
-## Getting Started
+## TALK TO ICONS
 
 First, run the development server:
 
