@@ -47,9 +47,9 @@ Explore the realm of personalized artificial intelligence companionship with Tal
 
 To get started with Talk2Icons, follow these simple steps:
 
-1. Clone this repository:
-   ```shell
-   git clone https://github.com/Adii-5442/Talk-2-Icons.git
+Clone this repository:
+```shell
+ git clone https://github.com/Adii-5442/Talk-2-Icons.git
 ### Install packages
 
 ```shell
