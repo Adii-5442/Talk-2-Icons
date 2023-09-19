@@ -50,6 +50,8 @@ To get started with Talk2Icons, follow these simple steps:
 Clone this repository:
 ```shell
  git clone https://github.com/Adii-5442/Talk-2-Icons.git
+```
+
 ### Install packages
 
 ```shell
